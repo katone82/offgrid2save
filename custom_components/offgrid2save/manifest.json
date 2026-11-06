@@ -1,6 +1,7 @@
 {
   "domain": "offgrid2save",
   "name": "OffGrid2Save",
+  "categories": ["energy.solar_batteries"],
   "codeowners": ["@katone82"],
   "config_flow": true,
   "dependencies": [
