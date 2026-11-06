@@ -1,0 +1,3 @@
+Metti qui le bollette PDF reali per verificare i template.
+Questa cartella e' esclusa da git: i file restano solo sul tuo computer.
+Ne servono almeno due dello stesso fornitore, meglio se di mesi diversi.

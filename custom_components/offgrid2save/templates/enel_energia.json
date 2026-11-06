@@ -1,0 +1,99 @@
+{
+  "id": "enel_energia",
+  "name": "Enel Energia",
+  "version": 1,
+  "match": {
+    "any": ["enel energia", "15844561009", "06655971007", "enel.it"]
+  },
+  "fields": {
+    "period_start": [
+      {"label": "periodo di fatturazione", "occurrence": 0},
+      {"label": "periodo di riferimento", "occurrence": 0},
+      {"label": "periodo fatturato", "occurrence": 0},
+      {"label": "periodo", "occurrence": 0}
+    ],
+    "period_end": [
+      {"label": "periodo di fatturazione", "occurrence": 1},
+      {"label": "periodo di riferimento", "occurrence": 1},
+      {"label": "periodo fatturato", "occurrence": 1},
+      {"label": "periodo", "occurrence": 1}
+    ],
+    "total_cost": [
+      {"label": "totale da pagare"},
+      {"label": "importo da pagare"},
+      {"label": "totale bolletta"},
+      {"label": "totale fattura"}
+    ],
+    "consumption_kwh": [
+      {"label": "consumo fatturato dal", "lookahead": 3, "occurrence": -1},
+      {"label": "consumo fatturato"},
+      {"label": "consumi fatturati"},
+      {"label": "consumo totale fatturato"},
+      {"label": "energia fatturata"}
+    ],
+    "bill_number": [
+      {"label": "fattura elettronica n"},
+      {"label": "bolletta n"},
+      {"label": "fattura n"},
+      {"label": "numero fattura"},
+      {"label": "numero bolletta"}
+    ],
+    "issue_date": [
+      {"label": "fattura elettronica n", "lookahead": 0},
+      {"label": "data emissione"},
+      {"label": "emessa il"},
+      {"label": "bolletta n", "lookahead": 0},
+      {"label": "fattura n", "lookahead": 0}
+    ],
+    "consumption_f1": [
+      {"label": "f1 f2 f3 totale energia", "lookahead": 1, "occurrence": 0},
+      {"label": "f1", "lookahead": 0}
+    ],
+    "consumption_f2": [
+      {"label": "f1 f2 f3 totale energia", "lookahead": 1, "occurrence": 1},
+      {"label": "f2", "lookahead": 0}
+    ],
+    "consumption_f3": [
+      {"label": "f1 f2 f3 totale energia", "lookahead": 1, "occurrence": 2},
+      {"label": "f3", "lookahead": 0}
+    ],
+    "cost_energy": [
+      {"label": "spesa per la materia energia"},
+      {"label": "spesa per l'energia"},
+      {"label": "materia energia"}
+    ],
+    "cost_transport": [
+      {"label": "spesa per il trasporto"},
+      {"label": "trasporto e la gestione del contatore"},
+      {"label": "gestione del contatore"}
+    ],
+    "cost_system": [
+      {"label": "spesa per oneri di sistema"},
+      {"label": "spesa oneri di sistema"},
+      {"label": "oneri di sistema"}
+    ],
+    "cost_variable": [
+      {"label": "quota consumi"},
+      {"label": "costi variabili"},
+      {"label": "totale costi variabili"}
+    ],
+    "cost_fixed": [
+      {"label": "quota fissa"},
+      {"label": "costi fissi"},
+      {"label": "totale costi fissi"}
+    ],
+    "cost_recalc": [{"label": "ricalcoli"}],
+    "cost_other": [{"label": "altre partite"}],
+    "cost_bonus": [{"label": "bonus sociale"}],
+    "cost_taxes": [
+      {"label": "totale imposte e iva"},
+      {"label": "imposte e iva"},
+      {"label": "accise e iva"}
+    ],
+    "cost_tv": [
+      {"label": "canone di abbonamento alla televisione"},
+      {"label": "canone tv"},
+      {"label": "canone rai"}
+    ]
+  }
+}

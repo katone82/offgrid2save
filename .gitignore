@@ -1,0 +1,12 @@
+# Real bills hold name, address, POD and tax code: they must never reach a public repository.
+samples/bollette/*
+!samples/bollette/LEGGIMI.txt
+*.pdf
+# Credentials for trying things against real services.
+samples/*.txt
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/

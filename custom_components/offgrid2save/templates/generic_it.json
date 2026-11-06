@@ -1,0 +1,103 @@
+{
+  "id": "generic_it",
+  "name": "Fornitore non riconosciuto",
+  "version": 1,
+  "fields": {
+    "period_start": [
+      {"label": "periodo di fatturazione", "occurrence": 0},
+      {"label": "periodo di riferimento", "occurrence": 0},
+      {"label": "periodo fatturato", "occurrence": 0},
+      {"label": "consumi dal", "occurrence": 0},
+      {"label": "periodo", "occurrence": 0},
+      {"label": "dal", "occurrence": 0}
+    ],
+    "period_end": [
+      {"label": "periodo di fatturazione", "occurrence": 1},
+      {"label": "periodo di riferimento", "occurrence": 1},
+      {"label": "periodo fatturato", "occurrence": 1},
+      {"label": "consumi dal", "occurrence": 1},
+      {"label": "periodo", "occurrence": 1},
+      {"label": "dal", "occurrence": 1}
+    ],
+    "total_cost": [
+      {"label": "totale da pagare"},
+      {"label": "importo da pagare"},
+      {"label": "totale bolletta"},
+      {"label": "totale fattura"},
+      {"label": "totale documento"},
+      {"label": "importo totale"},
+      {"label": "da pagare"}
+    ],
+    "consumption_kwh": [
+      {"label": "consumo fatturato"},
+      {"label": "consumi fatturati"},
+      {"label": "consumo totale"},
+      {"label": "consumo del periodo"},
+      {"label": "consumo nel periodo"},
+      {"label": "energia fatturata"},
+      {"label": "energia consumata"},
+      {"label": "energia attiva"},
+      {"label": "consumo"}
+    ],
+    "bill_number": [
+      {"label": "fattura elettronica n"},
+      {"label": "bolletta n"},
+      {"label": "fattura n"},
+      {"label": "numero fattura"},
+      {"label": "numero bolletta"},
+      {"label": "numero documento"}
+    ],
+    "issue_date": [
+      {"label": "data emissione"},
+      {"label": "data di emissione"},
+      {"label": "emessa il"},
+      {"label": "data fattura"},
+      {"label": "data documento"},
+      {"label": "fattura elettronica n", "lookahead": 0},
+      {"label": "bolletta n", "lookahead": 0},
+      {"label": "fattura n", "lookahead": 0}
+    ],
+    "consumption_f1": [{"label": "f1", "lookahead": 0}],
+    "consumption_f2": [{"label": "f2", "lookahead": 0}],
+    "consumption_f3": [{"label": "f3", "lookahead": 0}],
+    "cost_energy": [
+      {"label": "spesa per la materia energia"},
+      {"label": "spesa per l'energia"},
+      {"label": "materia energia"},
+      {"label": "materia prima"}
+    ],
+    "cost_transport": [
+      {"label": "spesa per il trasporto"},
+      {"label": "gestione del contatore"},
+      {"label": "trasporto"}
+    ],
+    "cost_system": [
+      {"label": "spesa per oneri di sistema"},
+      {"label": "spesa oneri di sistema"},
+      {"label": "oneri di sistema"}
+    ],
+    "cost_variable": [
+      {"label": "costi variabili"},
+      {"label": "quota consumi"},
+      {"label": "spesa per i consumi"}
+    ],
+    "cost_fixed": [
+      {"label": "costi fissi"},
+      {"label": "quota fissa"},
+      {"label": "spesa fissa"}
+    ],
+    "cost_recalc": [{"label": "ricalcoli"}, {"label": "ricalcolo"}],
+    "cost_other": [{"label": "altre partite"}],
+    "cost_bonus": [{"label": "bonus sociale"}],
+    "cost_taxes": [
+      {"label": "totale imposte e iva"},
+      {"label": "imposte e iva"},
+      {"label": "accise e iva"}
+    ],
+    "cost_tv": [
+      {"label": "canone di abbonamento alla televisione"},
+      {"label": "canone tv"},
+      {"label": "canone rai"}
+    ]
+  }
+}

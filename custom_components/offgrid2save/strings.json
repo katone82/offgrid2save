@@ -1,0 +1,198 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Bills folder",
+        "description": "The folder OffGrid2Save watches for PDF bills. A relative path starts from your Home Assistant configuration folder. It is created if missing.",
+        "data": {
+          "bills_path": "Folder"
+        }
+      },
+      "sources": {
+        "title": "Energy data sources",
+        "description": "Energy counters (kWh) measured by your plant. Victron GX counters are pre-filled when found; any energy sensor with long-term statistics works.\n\nHome consumption is 'sum of' minus 'minus'. If you leave it empty it is derived from production, grid and battery.",
+        "data": {
+          "grid_layout": "How the grid is connected",
+          "pv": "Solar production",
+          "grid_import": "Grid import",
+          "grid_export": "Grid export",
+          "consumption_add": "Home consumption, sum of",
+          "consumption_subtract": "Home consumption, minus",
+          "battery_charge": "Battery charge",
+          "battery_discharge": "Battery discharge"
+        }
+      },
+      "pricing": {
+        "title": "Prices",
+        "description": "Savings come from billing the solar kWh as if the supplier had provided them: the bill's energy cost plus those kWh at the consumption charge, divided by all the kWh of the month, gives a unit cost that values the solar kWh. A manual price replaces all this.",
+        "data": {
+          "price_method": "Value of a kWh from the plant",
+          "tax_rate": "VAT rate, used with the variable part when a bill does not show its taxes",
+          "export_price": "What you earn per kWh sold to the grid",
+          "manual_price": "Manual price per kWh, taxes included"
+        }
+      },
+      "source": {
+        "title": "Energy data source",
+        "description": "Where to read what your plant produced and consumed.\n\nVRM keeps the full history of the plant: when a bill arrives, its days are downloaded from there. Home Assistant sensors need no account, but only cover the days Home Assistant has recorded.",
+        "data": {
+          "data_source": "Source"
+        }
+      },
+      "vrm": {
+        "title": "VRM access",
+        "description": "Create an access token on VRM, in Preferences → Integrations → Access tokens, and paste it here. It stays in Home Assistant and is only sent to VRM, and is used to read data.\n\nWhen changing the configuration, leave it empty to keep the current one.",
+        "data": {
+          "vrm_token": "Access token",
+          "grid_layout": "How the grid is connected"
+        }
+      },
+      "vrm_site": {
+        "title": "VRM installation",
+        "description": "This token can read more than one installation: choose yours.",
+        "data": {
+          "vrm_site": "Installation"
+        }
+      }
+    },
+    "error": {
+      "path_not_allowed": "This folder is not allowed. Use a folder inside the Home Assistant configuration folder, or add it to allowlist_external_dirs.",
+      "path_not_writable": "Home Assistant cannot write to this folder.",
+      "consumption_or_grid_required": "Set the home consumption, or both grid import and solar production.",
+      "invalid_token": "VRM refused this token. Check that you copied it whole.",
+      "cannot_connect": "Cannot reach VRM. Check the connection and try again.",
+      "no_installations": "This VRM account has no installations."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Bills folder",
+        "description": "The folder OffGrid2Save watches for PDF bills. A relative path starts from your Home Assistant configuration folder. It is created if missing.",
+        "data": {
+          "bills_path": "Folder"
+        }
+      },
+      "sources": {
+        "title": "Energy data sources",
+        "description": "Energy counters (kWh) measured by your plant. Any energy sensor with long-term statistics works.\n\nHome consumption is 'sum of' minus 'minus'. If you leave it empty it is derived from production, grid and battery.",
+        "data": {
+          "grid_layout": "How the grid is connected",
+          "pv": "Solar production",
+          "grid_import": "Grid import",
+          "grid_export": "Grid export",
+          "consumption_add": "Home consumption, sum of",
+          "consumption_subtract": "Home consumption, minus",
+          "battery_charge": "Battery charge",
+          "battery_discharge": "Battery discharge"
+        }
+      },
+      "pricing": {
+        "title": "Prices",
+        "description": "Savings come from billing the solar kWh as if the supplier had provided them: the bill's energy cost plus those kWh at the consumption charge, divided by all the kWh of the month, gives a unit cost that values the solar kWh. A manual price replaces all this.",
+        "data": {
+          "price_method": "Value of a kWh from the plant",
+          "tax_rate": "VAT rate, used with the variable part when a bill does not show its taxes",
+          "export_price": "What you earn per kWh sold to the grid",
+          "manual_price": "Manual price per kWh, taxes included"
+        }
+      },
+      "source": {
+        "title": "Energy data source",
+        "description": "Where to read what your plant produced and consumed.\n\nVRM keeps the full history of the plant: when a bill arrives, its days are downloaded from there. Home Assistant sensors need no account, but only cover the days Home Assistant has recorded.",
+        "data": {
+          "data_source": "Source"
+        }
+      },
+      "vrm": {
+        "title": "VRM access",
+        "description": "Create an access token on VRM, in Preferences → Integrations → Access tokens, and paste it here. It stays in Home Assistant and is only sent to VRM, and is used to read data.\n\nWhen changing the configuration, leave it empty to keep the current one.",
+        "data": {
+          "vrm_token": "Access token",
+          "grid_layout": "How the grid is connected"
+        }
+      },
+      "vrm_site": {
+        "title": "VRM installation",
+        "description": "This token can read more than one installation: choose yours.",
+        "data": {
+          "vrm_site": "Installation"
+        }
+      }
+    },
+    "error": {
+      "path_not_allowed": "This folder is not allowed. Use a folder inside the Home Assistant configuration folder, or add it to allowlist_external_dirs.",
+      "path_not_writable": "Home Assistant cannot write to this folder.",
+      "consumption_or_grid_required": "Set the home consumption, or both grid import and solar production.",
+      "invalid_token": "VRM refused this token. Check that you copied it whole.",
+      "cannot_connect": "Cannot reach VRM. Check the connection and try again.",
+      "no_installations": "This VRM account has no installations."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total_savings": {
+        "name": "Total savings"
+      },
+      "total_paid": {
+        "name": "Total paid"
+      },
+      "total_without_plant": {
+        "name": "Total without plant"
+      },
+      "last_bill_cost": {
+        "name": "Latest bill cost"
+      },
+      "last_bill_savings": {
+        "name": "Latest bill savings"
+      },
+      "last_bill_without_plant": {
+        "name": "Latest bill without plant"
+      },
+      "last_bill_energy": {
+        "name": "Latest bill energy"
+      },
+      "energy_price": {
+        "name": "Energy price"
+      },
+      "last_bill_self_sufficiency": {
+        "name": "Latest bill self-sufficiency"
+      },
+      "current_period_savings": {
+        "name": "Savings since latest bill"
+      },
+      "current_period_self_sufficiency": {
+        "name": "Self-sufficiency since latest bill"
+      },
+      "bills_to_review": {
+        "name": "Bills to review"
+      }
+    }
+  },
+  "services": {
+    "rescan": {
+      "name": "Check the bills folder",
+      "description": "Looks for new PDF bills now instead of waiting for the next check, which happens every 5 minutes."
+    }
+  },
+  "selector": {
+    "grid_layout": {
+      "options": {
+        "through_plant": "The grid feeds the plant (AC-in connected), the plant feeds the home",
+        "separate": "Separate: the plant runs its own loads as an island, the bill pays for the other circuits"
+      }
+    },
+    "data_source": {
+      "options": {
+        "vrm": "VRM portal (recommended)",
+        "entities": "Home Assistant sensors"
+      }
+    },
+    "price_method": {
+      "options": {
+        "whole_home": "Unit cost over all the kWh of the month, solar included",
+        "variable": "Consumption charge only, leaving out the fixed charges (more cautious)"
+      }
+    }
+  }
+}

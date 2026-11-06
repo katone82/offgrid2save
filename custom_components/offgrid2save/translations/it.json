@@ -1,0 +1,198 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cartella delle bollette",
+        "description": "La cartella in cui OffGrid2Save cerca le bollette PDF. Un percorso relativo parte dalla cartella di configurazione di Home Assistant. Se non esiste viene creata.",
+        "data": {
+          "bills_path": "Cartella"
+        }
+      },
+      "sources": {
+        "title": "Sorgenti dei dati energia",
+        "description": "I contatori di energia (kWh) misurati dal tuo impianto. I contatori Victron GX sono già compilati se trovati; va bene qualsiasi sensore di energia con statistiche a lungo termine.\n\nIl consumo della casa è 'somma di' meno 'meno'. Se lo lasci vuoto viene ricavato da produzione, rete e batteria.",
+        "data": {
+          "grid_layout": "Come è collegata la rete",
+          "pv": "Produzione fotovoltaica",
+          "grid_import": "Prelievo dalla rete",
+          "grid_export": "Immissione in rete",
+          "consumption_add": "Consumo casa, somma di",
+          "consumption_subtract": "Consumo casa, meno",
+          "battery_charge": "Carica batteria",
+          "battery_discharge": "Scarica batteria"
+        }
+      },
+      "pricing": {
+        "title": "Prezzi",
+        "description": "Il risparmio si ottiene addebitando i kWh solari come se li avesse forniti il fornitore: il costo dell'energia in bolletta più quei kWh alla quota consumi, diviso tutti i kWh del mese, dà il costo unitario con cui valorizzare i kWh solari. Un prezzo manuale sostituisce tutto questo.",
+        "data": {
+          "price_method": "Valore di un kWh dell'impianto",
+          "tax_rate": "Aliquota IVA, usata con la parte variabile se una bolletta non riporta le imposte",
+          "export_price": "Quanto ricevi per ogni kWh ceduto alla rete",
+          "manual_price": "Prezzo manuale al kWh, imposte incluse"
+        }
+      },
+      "source": {
+        "title": "Sorgente dei dati energia",
+        "description": "Da dove leggere quanto ha prodotto e consumato l'impianto.\n\nVRM conserva tutto lo storico: quando arriva una bolletta, i suoi giorni vengono scaricati da lì. I sensori di Home Assistant non richiedono un account, ma coprono solo i giorni che Home Assistant ha registrato.",
+        "data": {
+          "data_source": "Sorgente"
+        }
+      },
+      "vrm": {
+        "title": "Accesso a VRM",
+        "description": "Crea un token di accesso su VRM, in Preferenze → Integrazioni → Token di accesso, e incollalo qui. Resta in Home Assistant, viene inviato solo a VRM e serve solo a leggere i dati.\n\nSe stai modificando la configurazione, lascialo vuoto per mantenere quello attuale.",
+        "data": {
+          "vrm_token": "Token di accesso",
+          "grid_layout": "Come è collegata la rete"
+        }
+      },
+      "vrm_site": {
+        "title": "Impianto VRM",
+        "description": "Questo token può leggere più di un impianto: scegli il tuo.",
+        "data": {
+          "vrm_site": "Impianto"
+        }
+      }
+    },
+    "error": {
+      "path_not_allowed": "Questa cartella non è consentita. Usa una cartella dentro la configurazione di Home Assistant, oppure aggiungila ad allowlist_external_dirs.",
+      "path_not_writable": "Home Assistant non può scrivere in questa cartella.",
+      "consumption_or_grid_required": "Indica il consumo della casa, oppure sia il prelievo dalla rete sia la produzione.",
+      "invalid_token": "VRM ha rifiutato questo token. Controlla di averlo copiato per intero.",
+      "cannot_connect": "VRM non è raggiungibile. Controlla la connessione e riprova.",
+      "no_installations": "Questo account VRM non ha impianti."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Cartella delle bollette",
+        "description": "La cartella in cui OffGrid2Save cerca le bollette PDF. Un percorso relativo parte dalla cartella di configurazione di Home Assistant. Se non esiste viene creata.",
+        "data": {
+          "bills_path": "Cartella"
+        }
+      },
+      "sources": {
+        "title": "Sorgenti dei dati energia",
+        "description": "I contatori di energia (kWh) misurati dal tuo impianto. Va bene qualsiasi sensore di energia con statistiche a lungo termine.\n\nIl consumo della casa è 'somma di' meno 'meno'. Se lo lasci vuoto viene ricavato da produzione, rete e batteria.",
+        "data": {
+          "grid_layout": "Come è collegata la rete",
+          "pv": "Produzione fotovoltaica",
+          "grid_import": "Prelievo dalla rete",
+          "grid_export": "Immissione in rete",
+          "consumption_add": "Consumo casa, somma di",
+          "consumption_subtract": "Consumo casa, meno",
+          "battery_charge": "Carica batteria",
+          "battery_discharge": "Scarica batteria"
+        }
+      },
+      "pricing": {
+        "title": "Prezzi",
+        "description": "Il risparmio si ottiene addebitando i kWh solari come se li avesse forniti il fornitore: il costo dell'energia in bolletta più quei kWh alla quota consumi, diviso tutti i kWh del mese, dà il costo unitario con cui valorizzare i kWh solari. Un prezzo manuale sostituisce tutto questo.",
+        "data": {
+          "price_method": "Valore di un kWh dell'impianto",
+          "tax_rate": "Aliquota IVA, usata con la parte variabile se una bolletta non riporta le imposte",
+          "export_price": "Quanto ricevi per ogni kWh ceduto alla rete",
+          "manual_price": "Prezzo manuale al kWh, imposte incluse"
+        }
+      },
+      "source": {
+        "title": "Sorgente dei dati energia",
+        "description": "Da dove leggere quanto ha prodotto e consumato l'impianto.\n\nVRM conserva tutto lo storico: quando arriva una bolletta, i suoi giorni vengono scaricati da lì. I sensori di Home Assistant non richiedono un account, ma coprono solo i giorni che Home Assistant ha registrato.",
+        "data": {
+          "data_source": "Sorgente"
+        }
+      },
+      "vrm": {
+        "title": "Accesso a VRM",
+        "description": "Crea un token di accesso su VRM, in Preferenze → Integrazioni → Token di accesso, e incollalo qui. Resta in Home Assistant, viene inviato solo a VRM e serve solo a leggere i dati.\n\nSe stai modificando la configurazione, lascialo vuoto per mantenere quello attuale.",
+        "data": {
+          "vrm_token": "Token di accesso",
+          "grid_layout": "Come è collegata la rete"
+        }
+      },
+      "vrm_site": {
+        "title": "Impianto VRM",
+        "description": "Questo token può leggere più di un impianto: scegli il tuo.",
+        "data": {
+          "vrm_site": "Impianto"
+        }
+      }
+    },
+    "error": {
+      "path_not_allowed": "Questa cartella non è consentita. Usa una cartella dentro la configurazione di Home Assistant, oppure aggiungila ad allowlist_external_dirs.",
+      "path_not_writable": "Home Assistant non può scrivere in questa cartella.",
+      "consumption_or_grid_required": "Indica il consumo della casa, oppure sia il prelievo dalla rete sia la produzione.",
+      "invalid_token": "VRM ha rifiutato questo token. Controlla di averlo copiato per intero.",
+      "cannot_connect": "VRM non è raggiungibile. Controlla la connessione e riprova.",
+      "no_installations": "Questo account VRM non ha impianti."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total_savings": {
+        "name": "Risparmio totale"
+      },
+      "total_paid": {
+        "name": "Totale pagato"
+      },
+      "total_without_plant": {
+        "name": "Totale senza impianto"
+      },
+      "last_bill_cost": {
+        "name": "Costo ultima bolletta"
+      },
+      "last_bill_savings": {
+        "name": "Risparmio ultima bolletta"
+      },
+      "last_bill_without_plant": {
+        "name": "Ultima bolletta senza impianto"
+      },
+      "last_bill_energy": {
+        "name": "Energia ultima bolletta"
+      },
+      "energy_price": {
+        "name": "Prezzo energia"
+      },
+      "last_bill_self_sufficiency": {
+        "name": "Autosufficienza ultima bolletta"
+      },
+      "current_period_savings": {
+        "name": "Risparmio dall'ultima bolletta"
+      },
+      "current_period_self_sufficiency": {
+        "name": "Autosufficienza dall'ultima bolletta"
+      },
+      "bills_to_review": {
+        "name": "Bollette da controllare"
+      }
+    }
+  },
+  "services": {
+    "rescan": {
+      "name": "Controlla la cartella delle bollette",
+      "description": "Cerca subito nuove bollette PDF invece di attendere il prossimo controllo, che avviene ogni 5 minuti."
+    }
+  },
+  "selector": {
+    "grid_layout": {
+      "options": {
+        "through_plant": "La rete entra nell'impianto (AC-in collegato) e l'impianto alimenta la casa",
+        "separate": "Separati: l'impianto alimenta i suoi carichi in isola, la bolletta paga gli altri circuiti"
+      }
+    },
+    "data_source": {
+      "options": {
+        "vrm": "Portale VRM (consigliato)",
+        "entities": "Sensori di Home Assistant"
+      }
+    },
+    "price_method": {
+      "options": {
+        "whole_home": "Costo unitario su tutti i kWh del mese, solare compreso",
+        "variable": "Solo la quota consumi, senza le quote fisse (più prudente)"
+      }
+    }
+  }
+}
