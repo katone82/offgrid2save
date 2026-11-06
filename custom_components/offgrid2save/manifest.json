@@ -1,7 +1,7 @@
 {
   "domain": "offgrid2save",
   "name": "OffGrid2Save",
-  "codeowners": ["@sitenable"],
+  "codeowners": ["@katone82"],
   "config_flow": true,
   "dependencies": [
     "frontend",
@@ -11,10 +11,10 @@
     "recorder",
     "websocket_api"
   ],
-  "documentation": "https://github.com/sitenable/offgrid2save",
+  "documentation": "https://github.com/katone82/offgrid2save",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/sitenable/offgrid2save/issues",
+  "issue_tracker": "https://github.com/katone82/offgrid2save/issues",
   "requirements": ["pypdf==6.21.4"],
   "single_config_entry": true,
   "version": "0.3.0"

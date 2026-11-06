@@ -2,14 +2,14 @@
 
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://www.hacs.xyz/)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2025.4%2B-18BCF2.svg)](https://www.home-assistant.io/)
-[![Validate](https://github.com/sitenable/offgrid2save/actions/workflows/validate.yaml/badge.svg)](https://github.com/sitenable/offgrid2save/actions/workflows/validate.yaml)
+[![Validate](https://github.com/katone82/offgrid2save/actions/workflows/validate.yaml/badge.svg)](https://github.com/katone82/offgrid2save/actions/workflows/validate.yaml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 **Quanto ti fa risparmiare davvero il tuo impianto fotovoltaico?** OffGrid2Save legge le tue bollette elettriche in PDF, scarica i dati dell'impianto dal portale Victron VRM e ti mostra in Home Assistant il risparmio mese per mese.
 
 *English summary [at the end of this page](#english).*
 
-![Il riepilogo di OffGrid2Save, con il risparmio totale e il confronto bolletta per bolletta](https://raw.githubusercontent.com/sitenable/offgrid2save/main/docs/riepilogo.jpg)
+![Il riepilogo di OffGrid2Save, con il risparmio totale e il confronto bolletta per bolletta](https://raw.githubusercontent.com/katone82/offgrid2save/main/docs/riepilogo.jpg)
 
 <sub>Gli screenshot usano bollette e dati inventati.</sub>
 
@@ -31,14 +31,14 @@ OffGrid2Save non è ancora nell'elenco predefinito di HACS, quindi va aggiunto c
 
 Con questo pulsante si apre direttamente il tuo Home Assistant:
 
-[![Apri in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sitenable&repository=offgrid2save&category=integration)
+[![Apri in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=katone82&repository=offgrid2save&category=integration)
 
 <details>
 <summary>Oppure a mano</summary>
 
 1. Apri **HACS** dalla barra laterale.
 2. Dal menu **⋮** in alto a destra scegli **Repository personalizzati**.
-3. Come repository scrivi `https://github.com/sitenable/offgrid2save`.
+3. Come repository scrivi `https://github.com/katone82/offgrid2save`.
 4. Come tipo scegli **Integrazione** e premi **Aggiungi**.
 
 </details>
@@ -117,7 +117,7 @@ Trascina il PDF nel pannello **OffGrid2Save** oppure copialo nella cartella: vie
 
 La prima bolletta di ogni fornitore va confermata. Controlli i valori guardando il testo del PDF, con la riga di origine evidenziata, e da quel momento le bollette di quel fornitore vengono lette in automatico.
 
-![La schermata di conferma, con i valori letti accanto al testo della bolletta](https://raw.githubusercontent.com/sitenable/offgrid2save/main/docs/conferma.jpg)
+![La schermata di conferma, con i valori letti accanto al testo della bolletta](https://raw.githubusercontent.com/katone82/offgrid2save/main/docs/conferma.jpg)
 
 | Stato | Significato | Cosa fare |
 |---|---|---|
@@ -154,7 +154,7 @@ risparmio         = 0,303 €/kWh × 360 kWh    = 109,12 €
 
 Nei prezzi puoi scegliere **solo la quota consumi**, per una stima più prudente, oppure impostare un prezzo manuale. La stessa spiegazione, con un esempio sui tuoi numeri, è nella scheda **Configurazione** del pannello.
 
-![La legenda nella scheda Configurazione](https://raw.githubusercontent.com/sitenable/offgrid2save/main/docs/legenda.jpg)
+![La legenda nella scheda Configurazione](https://raw.githubusercontent.com/katone82/offgrid2save/main/docs/legenda.jpg)
 
 ## Sensori e automazioni
 
@@ -207,7 +207,7 @@ Vengono tenuti solo i giorni affidabili. Con VRM non serve.
 
 ## Contribuire
 
-Segnalazioni e proposte sono benvenute nelle [issue](https://github.com/sitenable/offgrid2save/issues).
+Segnalazioni e proposte sono benvenute nelle [issue](https://github.com/katone82/offgrid2save/issues).
 
 **Un nuovo fornitore?** Basta un template in `custom_components/offgrid2save/templates/`: dopo aver confermato una bolletta trovi il tuo in `offgrid2save/templates/`, nella configurazione di Home Assistant. Contiene solo le etichette stampate vicino ai valori, ma controllalo prima di condividerlo.
 
@@ -227,12 +227,10 @@ La logica in `custom_components/offgrid2save/billcore/` non dipende da Home Assi
 
 OffGrid2Save reads your electricity bills as PDFs, downloads your solar plant's data from Victron VRM or from Home Assistant energy sensors, and shows in Home Assistant how much the plant saves you, month by month. The panel is available in Italian and English. Bills are read locally, with no AI. It learns each supplier's layout from one bill you confirm. The built-in template is for the Italian supplier Enel Energia.
 
-**Install with HACS:** open HACS, go to **⋮ → Custom repositories**, add `https://github.com/sitenable/offgrid2save` as an **Integration**, download **OffGrid2Save**, restart Home Assistant, then add it from **Settings → Devices & services**.
+**Install with HACS:** open HACS, go to **⋮ → Custom repositories**, add `https://github.com/katone82/offgrid2save` as an **Integration**, download **OffGrid2Save**, restart Home Assistant, then add it from **Settings → Devices & services**.
 
 **Savings:** simulated bill = the bill's energy cost + solar kWh at the supplier's consumption charge; unit cost = simulated bill ÷ all kWh (grid + solar); savings = unit cost × solar kWh.
 
 ## Licenza
 
 [MIT](LICENSE). Progetto indipendente, non affiliato a Enel né a Victron Energy. I nomi citati appartengono ai rispettivi proprietari.
-#   o f f g r i d 2 s a v e  
- 
